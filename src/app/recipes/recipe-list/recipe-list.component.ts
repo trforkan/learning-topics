@@ -1,5 +1,5 @@
 import { customData } from './../../model/models';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,12 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Input('customDataAlias') customData: customData | null = null;
+  @Input('customDataAlias') customData: customData[]  = [];
+  
+  @Output() outputValue = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.customData);
+  }
+
+  deleteItem(value: number = 10) {
+    this.outputValue.emit(value);
+    console.log(this.outputValue);
   }
 
 }
