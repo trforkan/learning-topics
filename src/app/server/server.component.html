@@ -1,0 +1,32 @@
+<div class="page-layout" [ngStyle]="{'background-color': bgColor} ">
+
+  <mat-label>Select Theme Color</mat-label>
+
+  <mat-button-toggle-group  (change)="colorToggle2($event)">
+    <mat-button-toggle value="red" >red</mat-button-toggle>
+    <mat-button-toggle value="green" >green</mat-button-toggle>
+    <mat-button-toggle value="blue" >blue</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <mat-form-field fxLayout="column" appearance="outline" class="w-100-p">
+    <mat-label>Input</mat-label>
+    <input matInput (change)="display($event)">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <!-- <button mat-raised-button (click)="colorToggle()">hello</button> -->
+
+  <mat-slide-toggle (change)="colorToggle($event)" >Change background-color</mat-slide-toggle>
+</div>
