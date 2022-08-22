@@ -1,0 +1,22 @@
+.page-header{
+
+  height: 48px;
+  border: 1px solid green;
+  background-color: antiquewhite;
+  align-items: center;
+  // align-content: center;
+  display: flex;
+  &__title {
+    // display: flex;
+    // align-items: center;
+    // align-content: center;
+    border: 1px solid red;
+    margin: auto;
+    margin-left: 16px;
+    text-decoration: none;
+    a {
+      border: 1px solid red;
+      text-decoration: none;
+    }
+  }
+ }

@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-udemy';
   number = 10;
+
+  customData = {
+    name: 'forkan',
+    age: 25,
+    gender: 'male'
+  };
+
 }
