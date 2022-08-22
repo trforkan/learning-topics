@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Input() customData: customData | null = null;
+  @Input('customDataAlias') customData: customData | null = null;
 
   constructor() { }
 
