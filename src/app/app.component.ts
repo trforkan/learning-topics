@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'angular-udemy';
   number = 10;
+
+  public childData : number | null = null;
 
   customData = [
     {
@@ -27,6 +29,8 @@ export class AppComponent {
     }
   ];
 
-  
+  ngOnInit(){
+    console.log("childData = ",this.childData);
+  }
 
 }

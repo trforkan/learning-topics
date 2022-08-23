@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Input('customDataAlias') customData: customData[]  = [];
-  
-  @Output() outputValue = new EventEmitter<number>();
+  @Input('customDataAlias') public customData: customData[]  = [];
+
+  @Output() public outputValue = new EventEmitter<number>();
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class RecipeListComponent implements OnInit {
 
   deleteItem(value: number = 10) {
     this.outputValue.emit(value);
-    console.log(this.outputValue);
+    // console.log(this.outputValue);
   }
 
 }
