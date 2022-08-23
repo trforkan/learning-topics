@@ -1,14 +1,27 @@
+<ng-content></ng-content>
+
+<ng-content select="[role]"></ng-content>
+
 <p>recipe-list works!</p>
+
 
 <button mat-stroked-button (click)="deleteItem()">Delete Last</button>
 
 
-<mat-form-field style="margin-right: 15px;" appearance="fill" >
-  <mat-label>Name</mat-label>
-  <input value="hello" type="text" matInput #nameRef>
-</mat-form-field>
+<form action="" [formGroup]="loginInput" (ngSubmit)="dataInsert()" >
 
-<mat-form-field appearance="fill">
-  <mat-label>Password</mat-label>
-  <input type="text" matInput>
-</mat-form-field>
+  <mat-form-field style="margin-right: 15px;" appearance="fill" >
+    <mat-label>Name</mat-label>
+    <input formControlName="name"  type="text" matInput #nameRef>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input formControlName="password" type="text" matInput>
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button>Submit</button>
+
+</form>
+
+

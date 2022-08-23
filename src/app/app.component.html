@@ -1,11 +1,16 @@
 <!-- <app-header></app-header> -->
 
+<p>app-component works!</p>
+
 <div class="container">
 
   <div class="row">
     <div class="col-md-12">
       <!-- {{customData}} -->
-      <app-recipe-list [customDataAlias] = "customData" (outputValue)="childData=$event"></app-recipe-list>
+      <app-recipe-list [customDataAlias] = "customData" (outputValue)="childData=$event">
+        inside the recipe list ng-component
+        <p role>nested component paragraph</p>
+      </app-recipe-list>
       {{childData}}
     </div>
   </div>
