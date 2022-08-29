@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResolveStart } from '@angular/router';
 import { bindCallback } from 'rxjs';
 
 @Component({
@@ -13,7 +14,53 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     // this.processOrder("forkan");
+    this.callbackHell();
 
+    console.log("promise:");
+
+    this.promise.then((result) => {
+      console.log(result);
+    });
+
+    this.promise.catch((err) => {
+      console.log(err);
+    })
+
+
+  }
+
+
+  promise = new Promise((resolve,reject) => {
+    if(this.number<10){
+      const data = {
+        name: 'Forkan',
+        email: 'trforkan@gmail.com'
+      }
+      resolve(data);
+    }
+
+    else {
+      reject(new Error("data undefined!!!!!!!"));
+    }
+  })
+
+
+  // promise = new Promise((resolve,reject) => {
+  //    if(this.number<10) {
+  //     const meetingDetails = {
+  //       name: 'Angular Learning',
+  //       platform: 'Google Meet',
+  //       time: "10:00 AM"
+  //     }
+  //     resolve(meetingDetails);
+  //    }
+  //    else {
+  //     reject(new Error('Meeting already scheduled!!!!!!!!'));
+  //    }
+  // });
+
+
+  callbackHell() {
     this.takeOrder('Forkan', (customer:any)=>{
       this.processOrder(customer, (customer:any)=>{
         this.completeOrder(customer);
