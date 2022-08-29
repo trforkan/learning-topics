@@ -14,24 +14,34 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     // this.processOrder("forkan");
-    this.callbackHell();
+    // this.callbackHell();
 
     console.log("promise:");
 
-    this.promise.then((result) => {
-      console.log(result);
-    });
+    this.promise
+      .then(this.myfunc)
 
-    this.promise.catch((err) => {
-      console.log(err);
-    })
+      .then((result) => {
+        console.log(result);
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
 
 
   }
 
 
+  myfunc = (data:any) => {
+
+    const str = `His name is ${data.name} and email address is ${data.email}`;
+    return Promise.resolve(str);
+
+  }
+
   promise = new Promise((resolve,reject) => {
-    if(this.number<10){
+    if(this.number>=10){
       const data = {
         name: 'Forkan',
         email: 'trforkan@gmail.com'
